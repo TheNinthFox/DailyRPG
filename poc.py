@@ -90,6 +90,7 @@ def create_projects():
         Task('Draw a self-portrait', TaskState.DAILY),
         Task('Draw scenery', TaskState.DAILY),
         Task('Read 10 pages of Vilppu\'s Drawing Manual and copy the pictures', TaskState.DAILY),
+        Task('Complete a drawing (no rush, colors, fine detail).', TaskState.DAILY),
     ]
     projects['drawing'] = drawing
 
