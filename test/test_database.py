@@ -14,14 +14,14 @@ class TestDatabaseCreation(unittest.TestCase):
         setup_dependency_container('test')
 
     def test_database_creation(self):
-        from src.dependency import Base, engine
+        from src.dependency import Base, engine, env
         Base.metadata.create_all(engine)
 
-        database_path = 'data/test.db'
+        # TODO: Hide SQLAlchemy implementation.
 
-        self.assertTrue(os.path.isfile(database_path))
+        self.assertTrue(os.path.isfile(env['database']))
 
-        os.remove(database_path)
+        os.remove(env['database'])
 
 
 if __name__ == '__main__':
