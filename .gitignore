@@ -2,5 +2,4 @@
 *.pyc
 .idea
 __pycache__
-db.py
 data
