@@ -12,7 +12,7 @@ Base = None
 engine = None
 
 
-def setup(environment=''):
+def setup_dependency_container(environment=''):
     global env_config
     global env
     global Base

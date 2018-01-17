@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-from src.dependency import setup
+from src.dependency import setup_dependency_container
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == '__main__':
-    setup()
+    setup_dependency_container()
 
     from src.dependency import Base, engine
     Base.metadata.create_all(engine)
