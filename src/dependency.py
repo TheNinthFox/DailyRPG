@@ -1,21 +1,19 @@
 import yaml
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+from .database.models import Base
 
 # Config
 env_config = None
 env = None
 
 # Database
-Base = None
 engine = None
 
 
 def setup_dependency_container(environment=''):
     global env_config
     global env
-    global Base
     global engine
 
     with open('config/env.yaml', 'r') as environment_config:
@@ -26,5 +24,6 @@ def setup_dependency_container(environment=''):
     else:
         env = env_config['env'][env_config['APP_ENV']]
 
-    Base = declarative_base()
-    engine = create_engine('sqlite:///{}'.format(env['database']), echo=True)
+    debug = True if env['name'] == 'Dev' else False
+
+    engine = create_engine('sqlite:///{}'.format(env['database']), echo=debug)

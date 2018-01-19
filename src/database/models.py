@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relation
-from ..dependency import Base
+
+Base = declarative_base()
 
 
 class Skill(Base):
